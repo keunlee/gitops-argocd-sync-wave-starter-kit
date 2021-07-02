@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: third
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   containers:
   - name: third
