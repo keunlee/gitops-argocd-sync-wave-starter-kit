@@ -5,5 +5,7 @@ resources:
 - 01-first.yaml
 - 02-second.yaml
 - 03-third.yaml
+- 04-pre-synch.yaml
 - 04-fourth.yaml
+- 04-post-synch.yaml
 - 05-fifth.yaml
