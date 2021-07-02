@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: 01-default
+namespace: 01-without-sync-wave
 resources:
 - 01-first.yaml
 - 02-second.yaml
