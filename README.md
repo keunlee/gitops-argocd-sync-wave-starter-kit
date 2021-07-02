@@ -2,7 +2,7 @@
 
 A brief overview of what and how to use ArgoCD's Sync and Wave feature to orchestrate the sequence of execution in your GitOps workflows. 
 
-# Prequisites
+# Pre-requisites
 
 - Red Hat Openshift (4.7.x)
 - Red Hat Openshift GitOps Operator (1.1.2)
