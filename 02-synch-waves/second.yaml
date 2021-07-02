@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: second
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  containers:
+  - name: second
+    image: busybox:latest
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]

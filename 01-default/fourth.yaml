@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fourth
+spec:
+  containers:
+  - name: fourth
+    image: busybox:latest
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
