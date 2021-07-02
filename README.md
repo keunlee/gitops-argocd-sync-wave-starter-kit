@@ -34,6 +34,8 @@ A brief overview of what and how to use ArgoCD's Sync and Wave feature to orches
 
 # GitOps Workflow - Asynchronous Execution
 
+## Create Application
+
 - click: ***Applications (Stack Icon)::New App***
 - fill in the form fields:
     - General 
@@ -55,7 +57,11 @@ A brief overview of what and how to use ArgoCD's Sync and Wave feature to orches
 - click ***Create***
 ![Screenshot from 2021-07-02 15-42-20](https://user-images.githubusercontent.com/61749/124326964-fc310300-db4c-11eb-816c-6021905e6f87.png)
 
+## Synchronize and Observe
+
 # GitOps Workflow - Synchronous Execution
+
+## Create Application
 
 - click: ***Applications (Stack Icon)::New App***
 - fill in the form fields:
@@ -76,4 +82,6 @@ A brief overview of what and how to use ArgoCD's Sync and Wave feature to orches
     - Kustomize
         - leave all values at default
 - click ***Create***
-![Screenshot from 2021-07-02 15-42-20](https://user-images.githubusercontent.com/61749/124326964-fc310300-db4c-11eb-816c-6021905e6f87.png)
+![Screenshot from 2021-07-02 15-58-07](https://user-images.githubusercontent.com/61749/124327984-64341900-db4e-11eb-96b7-14086cf672c9.png)
+
+## Synchronize and Observe
