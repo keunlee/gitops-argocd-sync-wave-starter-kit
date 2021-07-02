@@ -26,6 +26,9 @@ A brief overview of what and how to use ArgoCD's Sync and Wave feature to orches
     - Descriptiion: Demonstration of ArgoCD Syncs and Waves
 
     ![Screenshot from 2021-07-02 15-01-08](https://user-images.githubusercontent.com/61749/124323124-62feee00-db46-11eb-9145-5025c371d297.png)
+- Click **Create**
+- Click on the project from the list and edit the project so that it looks similar to the following: 
+![Screenshot from 2021-07-02 15-47-59](https://user-images.githubusercontent.com/61749/124326939-eb808d00-db4c-11eb-9fb0-016f6fab014c.png)
 
 4. Create an ArgoCD Application
 
@@ -34,41 +37,43 @@ A brief overview of what and how to use ArgoCD's Sync and Wave feature to orches
 - click: ***Applications (Stack Icon)::New App***
 - fill in the form fields:
     - General 
-        - ***Application Name***: beer-horoscope
+        - ***Application Name***: 01-without-sync-wave
         - ***Project***: default
         - ***Sync Policy***: Manual (Defaults)
-        - ***Sync Options***: None (Defaults)
+        - ***Sync Options***:
+            - ***check***: Auto-create Namespace
         - ***Prune Propogation Policy***: foreground
     - Source
-        - ***Repository Url***: https://github.com/beer-horoscope/beer-horoscope.git
+        - ***Repository Url***: https://github.com/keunlee/gitops-argocd-syncs-waves.git
         - ***Revision***: HEAD
-        - ***Path***: gitops
+        - ***Path***: 01-without-sync-wave
     - Destination
         - ***Cluster Url***: https://kubernetes.default.svc
-        - ***Namespace***: beer-rec-system
-    - Helm
-        - ***Values File***: values.yaml
-        - ***spec.destination.server***: https://kubernetes.default.svc
-![Screenshot from 2021-06-08 08-28-27](https://user-images.githubusercontent.com/61749/121194029-f7ba4880-c833-11eb-8438-5be1f712fc83.png)
+        - ***Namespace***: 01-without-sync-wave
+    - Kustomize
+        - leave all values at default
+- click ***Create***
+![Screenshot from 2021-07-02 15-42-20](https://user-images.githubusercontent.com/61749/124326964-fc310300-db4c-11eb-816c-6021905e6f87.png)
 
 # GitOps Workflow - Synchronous Execution
 
 - click: ***Applications (Stack Icon)::New App***
 - fill in the form fields:
     - General 
-        - ***Application Name***: beer-horoscope
+        - ***Application Name***: 02-with-sync-wave
         - ***Project***: default
         - ***Sync Policy***: Manual (Defaults)
-        - ***Sync Options***: None (Defaults)
+        - ***Sync Options***:
+            - ***check***: Auto-create Namespace
         - ***Prune Propogation Policy***: foreground
     - Source
-        - ***Repository Url***: https://github.com/beer-horoscope/beer-horoscope.git
+        - ***Repository Url***: https://github.com/keunlee/gitops-argocd-syncs-waves.git
         - ***Revision***: HEAD
-        - ***Path***: gitops
+        - ***Path***: 02-with-sync-wave
     - Destination
         - ***Cluster Url***: https://kubernetes.default.svc
-        - ***Namespace***: beer-rec-system
-    - Helm
-        - ***Values File***: values.yaml
-        - ***spec.destination.server***: https://kubernetes.default.svc
-![Screenshot from 2021-06-08 08-28-27](https://user-images.githubusercontent.com/61749/121194029-f7ba4880-c833-11eb-8438-5be1f712fc83.png)
+        - ***Namespace***: 02-with-sync-wave
+    - Kustomize
+        - leave all values at default
+- click ***Create***
+![Screenshot from 2021-07-02 15-42-20](https://user-images.githubusercontent.com/61749/124326964-fc310300-db4c-11eb-816c-6021905e6f87.png)
