@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pre-fourth
+  name: pre-sync
   annotations:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
-    argocd.argoproj.io/sync-wave: "4"
 spec:
   containers:
-  - name: pre-fourth
+  - name: pre-sync
     image: busybox:latest
     command: ["/bin/sh", "-c", "tail -f /dev/null"]

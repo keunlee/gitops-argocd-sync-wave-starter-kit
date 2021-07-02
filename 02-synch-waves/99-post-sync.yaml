@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: post-fourth
+  name: post-sync
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
-    argocd.argoproj.io/sync-wave: "4"
 spec:
   containers:
-  - name: post-fourth
+  - name: post-sync
     image: busybox:latest
     command: ["/bin/sh", "-c", "tail -f /dev/null"]
