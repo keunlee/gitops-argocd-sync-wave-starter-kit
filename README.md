@@ -97,3 +97,91 @@ Notice that all the pods are deployed asynchronously
 - click: **Sync::Synchronize** and observe the deployment of the pods
 
 Notice the synchronous order that the pods are deployed in. 
+
+### Presync
+
+A Presync will execute before waves are executed. It is the first step in a workflow to run. To leverage a workflow step as a Presync add the following annotations: 
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pre-sync
+  # PreSync Annotations
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  containers:
+  - name: pre-sync
+    image: busybox:latest
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
+```
+
+### Postsync
+
+A Postsync will execute after all waves are executed. It is the last step in a workflow to run. To leverage a workflow step as a Postsync add the following annotations: 
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: post-sync
+  # PostSync Annotations
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  containers:
+  - name: post-sync
+    image: busybox:latest
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
+```
+
+### Waves
+
+Waves are determine when a workflow step runs. An starting order of 0 and through N denotes the order that a wave is run. Waves can be run in parallel and/or in sequence depending on how a workflow step's wave is numbered. To assign a workflow step to a wave add the following annotations: 
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: group-01-step-01a
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  containers:
+  - name: group-01-step-01a
+    image: busybox:latest
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: group-01-step-01b
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  containers:
+  - name: group-01-step-01b
+    image: busybox:latest
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: group-02-step-01
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  containers:
+  - name:  group-02-step-01
+    image: busybox:latest
+    command: ["/bin/sh", "-c", "tail -f /dev/null"]
+```
+
+The steps above will execute in the following order: 
+
+- **Sequence 1:** In Parallel - `group-01-step-01a` and `group-01-step-01b`
+- **Sequence 2:** `group-02-step-01`
+
