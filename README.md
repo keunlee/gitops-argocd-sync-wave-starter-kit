@@ -59,6 +59,12 @@ A brief overview of what and how to use ArgoCD's Sync and Wave feature to orches
 
 ## Synchronize and Observe
 
+- click on the application tile **01-without-sync-wave** you'll be met with the following screen: 
+![Screenshot from 2021-07-02 16-44-39](https://user-images.githubusercontent.com/61749/124331474-df98c900-db54-11eb-8ee3-b85984199de8.png)
+- click: **Sync::Synchronize** and observe the deployment of the pods
+
+Notice that all the pods are deployed asynchronously
+
 # GitOps Workflow - Synchronous Execution
 
 ## Create Application
@@ -85,3 +91,9 @@ A brief overview of what and how to use ArgoCD's Sync and Wave feature to orches
 ![Screenshot from 2021-07-02 15-58-07](https://user-images.githubusercontent.com/61749/124327984-64341900-db4e-11eb-96b7-14086cf672c9.png)
 
 ## Synchronize and Observe
+
+- click on the application tile **01-without-sync-wave** you'll be met with the following screen: 
+![Screenshot from 2021-07-02 16-53-04](https://user-images.githubusercontent.com/61749/124331977-fdb2f900-db55-11eb-9195-8147e678d158.png)
+- click: **Sync::Synchronize** and observe the deployment of the pods
+
+Notice the synchronous order that the pods are deployed in. 
