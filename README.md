@@ -140,7 +140,7 @@ spec:
 
 ### Waves
 
-Waves are determine when a workflow step runs. An starting order of 0 and through N denotes the order that a wave is run. Waves can be run in parallel and/or in sequence depending on how a workflow step's wave is numbered. To assign a workflow step to a wave add the following annotations: 
+Waves are determine when a workflow step runs. An starting order of 0 and through N denotes the order that a wave is run. Waves can be run in parallel and/or in sequence depending on how a workflow step's wave is numbered. To assign a workflow step to a wave add the following annotation `argocd.argoproj.io/sync-wave` and assign an integer to it, denoting it's order. For example: 
 
 ```yaml
 apiVersion: v1
