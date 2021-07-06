@@ -187,7 +187,7 @@ The steps above will execute in the following order:
 
 # Troubleshooting
 
-If you've just installed the GitOps Operator on your cluster for the first time are getting permission related errors/messages, run the following to assign the cluster admin role to the service account `openshift-gitops-argocd-application-controller`
+If you've just installed the GitOps Operator on your cluster for the first time and are getting permission related errors/messages, run the following to assign the cluster admin role to the service account `openshift-gitops-argocd-application-controller`
 
 ```bash
 oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
